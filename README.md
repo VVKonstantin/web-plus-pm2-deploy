@@ -6,6 +6,6 @@
 
 * IP адрес 51.250.65.156
 
-frontend  https://vkvmesto.students.nomoredomainsicu.ru/
+* frontend  https://vkvmesto.students.nomoredomainsicu.ru/
 
-backend https://api.vkvmesto.students.nomoredomainsicu.ru/
+* backend https://api.vkvmesto.students.nomoredomainsicu.ru/
