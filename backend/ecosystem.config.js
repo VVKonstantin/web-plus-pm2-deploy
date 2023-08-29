@@ -17,7 +17,7 @@ module.exports = {
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
       'pre-deploy-local': `scp ./.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/backend`,
-      'post-deploy': `cd ${DEPLOY_PATH}source/backend && npm i && npm run build && && pm2 reload ecosystem.config.js && pm2 save`,
+      'post-deploy': `cd ${DEPLOY_PATH}source/backend && npm i && npm run build && pm2 start`,
     },
   },
 };
