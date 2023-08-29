@@ -6,7 +6,8 @@ const {
 
 module.exports = {
   apps: [{
-    name: 'frontend',
+    name: 'backend',
+    script: './dist/app.js',
   }],
   deploy: {
     production: {
@@ -15,7 +16,8 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
-      'post-deploy': `cd ${DEPLOY_PATH}source/frontend && npm i && npm run build`,
+      'pre-deploy-local': `scp ./.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/backend`,
+      'post-deploy': `cd ${DEPLOY_PATH}source/backend && npm i && npm run build && && pm2 reload ecosystem.config.js && pm2 save`,
     },
   },
 };
